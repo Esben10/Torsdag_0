@@ -20,12 +20,14 @@ void setup(){
 
 void draw(){
   
-
+//counter tæller op så længe framecount kan divideres med NumberOfCircles
   counter = (frameCount - 1) % numberOfCircles == 0 ? 0 : counter + 1;
+
+//Rowcounter tæller op med 1 kun hvis counter er 0!
   rowCounter = (counter == 0 && frameCount > 1) ? rowCounter + 1 : rowCounter;
  
 
- 
+ //Så længe counter er 0 så bliver ellipsen random color, ellers hvid. Det gør at alle første circler får ny farve.
  if (counter == 0){
     red = random(255);
     blue = random(255);
